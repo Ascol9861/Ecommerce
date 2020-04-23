@@ -59,9 +59,9 @@
                     <div class="login_part_form_iner">
                         <h3>Welcome To Ecommerce ! <br>
                             Please register here</h3>
-                        <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                        <form class="row contact_form" action="RegisterServlet" method="post" novalidate="novalidate">
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="name" name="name" value=""
+                                <input type="text" class="form-control" id="name" name="username" value=""
                                        placeholder="Username">
                             </div>
                             <div class="col-md-12 form-group p_star">
