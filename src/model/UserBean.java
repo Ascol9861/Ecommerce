@@ -1,10 +1,18 @@
 package model;
 
 public class UserBean {
+    private int id;
     private String username;
     private String password;
     private String userType;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;

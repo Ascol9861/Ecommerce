@@ -3,6 +3,7 @@ package model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class UserDAO {
     public static Connection getConnection(){
@@ -28,5 +29,23 @@ public class UserDAO {
         }
         return status;
     }
+
+    public static UserBean login(String username){
+        UserBean u=null;
+        try{
+            Connection con=getConnection();
+            PreparedStatement ps=con.prepareStatement("select * from user where username=?");
+            ps.setString(1,username);
+            ResultSet rs=ps.executeQuery();
+            while(rs.next()){
+                u=new UserBean();
+                u.setId(rs.getInt("id"));
+                u.setUsername(rs.getString("username"));
+                u.setPassword(rs.getString("password"));
+            }
+        }catch(Exception e){System.out.println(e);}
+        return u;
+    }
+
 
 }
